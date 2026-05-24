@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #f5f5f0 0%, #e8e8e0 100%);
+            padding: 40px;
+            min-height: 100vh;
+        }
+
+        .menu-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 60px 50px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border-radius: 2px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 2px solid #2c2c2c;
+            padding-bottom: 30px;
+        }
+
+        .shop-name {
+            font-size: 48px;
+            font-weight: 300;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: #2c2c2c;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #8b7355;
+            font-weight: 400;
+        }
+
+        .section {
+            margin-bottom: 45px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 400;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #2c2c2c;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 1px;
+            background: #8b7355;
+            margin: 12px auto 0;
+        }
+
+        .menu-items {
+            display: grid;
+            gap: 20px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 8px 0;
+            border-bottom: 1px dotted #d0d0d0;
+        }
+
+        .item-name {
+            font-size: 18px;
+            color: #2c2c2c;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .item-description {
+            font-size: 13px;
+            color: #666;
+            font-style: italic;
+            margin-top: 4px;
+            font-family: 'Georgia', serif;
+        }
+
+        .item-left {
+            flex: 1;
+        }
+
+        .item-price {
+            font-size: 18px;
+            color: #8b7355;
+            font-weight: 500;
+            margin-left: 20px;
+            white-space: nowrap;
+        }
+
+        .size-options {
+            display: flex;
+            gap: 15px;
+            margin-left: 20px;
+            align-items: center;
+        }
+
+        .size-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .size-label {
+            font-size: 11px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .size-price {
+            font-size: 16px;
+            color: #8b7355;
+            font-weight: 500;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer-text {
+            font-size: 12px;
+            color: #999;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .icons {
+            margin-top: 15px;
+            font-size: 20px;
+            color: #8b7355;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .menu-container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-container {
+                padding: 40px 30px;
+            }
+            .shop-name {
+                font-size: 36px;
+                letter-spacing: 4px;
+            }
+            .size-options {
+                flex-direction: column;
+                gap: 8px;
+                align-items: flex-end;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <div class="header">
+            <h1 class="shop-name">Brew & Bean</h1>
+            <p class="tagline">Artisan Coffee & Fresh Pastries</p>
+        </div>
+
+        <!-- COFFEE SECTION -->
+        <div class="section">
+            <h2 class="section-title">Coffee</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-left">
+                        <div class="item-name">Espresso</div>
+                        <div class="item-description">Rich, bold single shot</div>
+                    </div>
+                    <div class="size-options">
+                        <div class="size-option">
+                            <span class="size-label">Single</span>
+                            <span class="size-price">$3.50</span>
+                        </div>
+                        <div class="size-option">
+                            <span class="size-label">Double</span>
+                            <span class="size-price">$4.50</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-left">
+                        <div class="item-name">Americano</div>
+                        <div class="item-description">Espresso with hot water</div>
+                    </div>
+                    <div class="size-options">
+                        <div class="size-option">
+                            <span class="size-label">12oz</span>
+                            <span class="size-price">$4.00</span>
+                        </div>
+                        <div class="size-option">
+                            <span class="size-label">16oz</span>
+                            <span class="size-price">$4.75</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-left">
+                        <div class="item-name">Cappuccino</div>
+                        <div class="item-description">Espresso, steamed milk, foam</div>
+                    </div>
+                    <div class="size-options">
+                        <div class="size-option">
+                            <span class="size-label">12oz</span>
+                            <span class="size-price">$4.50</span>
+                        </div>
+                        <div class="size-option">
+                            <span class="size-label">16oz</span>
+                            <span class="size-price">$5.25</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-left">
+                        <div class="item-name">Latte</div>
+                        <div class="item-description">Espresso with steamed milk</div>
+                    </div>
+                    <div class="size-options">
+                        <div class="size-option">
+                            <span class="size-label">12oz</span>
+                            <span class="size-price">$4.75</span>
+                        </div>
+                        <div class="size-option">
+                            <span class="size-label">16oz</span>
+                            <span class="size-price">$5.50</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-left">
+                        <div class="item-name">Flat White</div>
+                        <div class="item-description">Velvety microfoam perfection</div>
+                    </div>
+                    <div class="item-price">$5.00</div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-left">
+                        <div class="item-name">Mocha</div>
+                        <div class="item-description">Espresso, chocolate, steamed milk</div>
+                    </div>
+                    <div class="size-options">
+                        <div class="size-option">
+                            <span class="size-label">12oz</span>
+                            <span class="size-price">$5.25</span>
+                        </div>
+                        <div class="size-option">
+                            <span class="size-label">16oz</span>
+                            <span class="size-price">$6.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-left">
+                        <div class="item-name">Cold Brew</div>
+                        <div class="item-description">Smooth, refreshing, never bitter</div>
+                    </div>
+                    <div class="size-options">
+                        <div class="size-option">
+                            <span class="size-label">12oz</span>
+                            <span class="size-price">$4.50</span>
+                        </div>
+                        <div class="size-option">
+                            <span class="size-label">16oz</span>
+                            <span class="size-price">$5.25</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TEA & OTHER SECTION -->
+        <div class="section">
+            <h2 class="section-title">Tea & More</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-left">
+                        <div class="item-name">Matcha Latte</div>
+                        <div class="item-description">Japanese green tea, steamed milk</div>
+                    </div>
+                    <div class="item-price">$5.50</div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-left">
+                        <div class="item-name">Chai Latte</div>
+                        <div class="item-description">Spiced tea with steamed milk</div>
+                    </div>
+                    <div class="item-price">$5.00</div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-left">
+                        <div class="item-name">Herbal Tea</div>
+                        <div class="item-description">Selection of premium loose leaf</div>
+                    </div>
+                    <div class="item-price">$3.50</div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-left">
+                        <div class="item-name">Hot Chocolate</div>
+                        <div class="item-description">Rich Belgian chocolate</div>
+                    </div>
+                    <div class="item-price">$4.50</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PASTRIES SECTION -->
+        <div class="section">
+            <h2 class="section-title">Pastries</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-left">
+                        <div class="item-name">Butter Croissant</div>
+                        <div class="item-description">Flaky, golden, fresh daily</div>
+                    </div>
+                    <div class="item-price">$3.50</div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-left">
+                        <div class="item-name">Almond Croissant</div>
+                        <div class="item-description">Filled with almond cream</div>
+                    </div>
+                    <div class="item-price">$4.50</div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-left">
+                        <div class="item-name">Blueberry Muffin</div>
+                        <div class="item-description">Bursting with fresh berries</div>
+                    </div>
+                    <div class="item-price">$3.75</div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-left">
+                        <div class="item-name">Cinnamon Roll</div>
+                        <div class="item-description">Warm with cream cheese frosting</div>
+                    </div>
+                    <div class="item-price">$4.25</div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-left">
+                        <div class="item-name">Banana Bread</div>
+                        <div class="item-description">Moist, homemade, nutty</div>
+                    </div>
+                    <div class="item-price">$3.50</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <p class="footer-text">Made with love, daily</p>
+            <div class="icons">☕</div>
+        </div>
+    </div>
+</body>
+</html>
